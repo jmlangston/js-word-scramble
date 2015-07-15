@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Word Scramble</title>
+</head>
+<body>
+    <h1>A Javascript Word Scramble Game</h1>
+
+    <script>
+        var WORDS     = ["Bhutan", "Nigeria", "Bolivia", "Ukraine"];
+        var SCRAMBLED = ["tahnbu", "gianeri", "volbiai", "kaneiur"];
+
+        var playing = true;
+
+        while (playing) {
+
+            // Grab a random word from the WORDS array
+            function getRandom(min, max) {
+                return Math.floor(Math.random() * (max - min) + min);
+
+                // randomIndex = WORDS.random();
+                // return randomIndex;
+            }
+            var randomIndex = getRandom(0, 4);
+            
+
+            // Grab the corresponding scrambled word from the SCRAMBLED array
+
+            var randomWord = WORDS[randomIndex];
+
+            var scrambledWord = SCRAMBLED[randomIndex];
+
+            // prompt the user to guess the original word when given the scrambled word
+
+            alert("Guess what country this is: " + scrambledWord);
+
+            var guess = window.prompt("Make your best guess!")
+
+            // If the user guesses wrong, tell them they were wrong and the right word.
+
+            if (guess.toLowerCase() == randomWord.toLowerCase()) {
+                alert("You are so intelligent. Like really. Like totally.");
+            }
+
+            else {
+                alert("Shame on you! It's so obvious that it was " + randomWord);
+            }
+            // If the user guesses the correct word, congratulate them.
+
+            // playing = confirm("Press OK To keep playing or Cancel to quit");
+
+            // What does confirm() return?
+            // What does setting the playing variable do?
+        }
+
+        alert("goodbye!");
+    </script>
+    
+</body>
+</html>
